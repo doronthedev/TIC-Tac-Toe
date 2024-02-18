@@ -69,8 +69,8 @@ h1{
     .boxes{
         height: 75px;
         width: 75px;
-        font-weight: 500;
-        font-size: 4rem;
+        font-weight: 300;
+        font-size: 3.5rem;
     }
     h1{
         font-weight: 600;
