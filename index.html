@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img\the_game_board.jpeg">
+    <script src="indexGame.js" defer></script>
+    <title>TIC Tac Toe</title>
+</head>
+<body>
+    <div class="information">
+        <h1>TIC Tac Toe</h1>
+        <h2><span class="userTurnP1">It's</span> <span class="userTurn">X</span> <span class="userTurnP2">turn</span></h2>
+    </div>
+    <div class="box">
+        <div class="box1 boxes">X</div>
+        <div class="box2 boxes"></div>
+        <div class="box3 boxes"></div>
+        <div class="box4 boxes"></div>
+        <div class="box5 boxes"></div>
+        <div class="box6 boxes"></div>
+        <div class="box7 boxes"></div>
+        <div class="box8 boxes"></div>
+        <div class="box9 boxes"></div>
+    </div>
+    <div class="buttons">
+        <button onclick="humanVsComputer()" class="vsComputer choiceBtn">Human Vs Computer</button>
+        <button onclick="humanVsHuman()" class="vsHuman choiceBtn">Human Vs Human</button>
+        <button onclick="resetBoard(); resetMap(gameMap)" class="choiceBtn">Reset Game</button>
+    </div>
+</body>
+</html>
