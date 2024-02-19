@@ -279,6 +279,7 @@ function computerRandomTurn (gameMap) {
         ) return 8;
     }
 
+
     if (
     ((gameMap[0][0] === "X" || gameMap[0][2] === "X" || gameMap[2][0] === "X" || gameMap[2][2] === "X") ||    
     (gameMap[0][1] === "X" || gameMap[1][0] === "X" || gameMap[1][2] === "X" || gameMap[2][1] === "X")) &&
@@ -309,22 +310,26 @@ function computerRandomTurn (gameMap) {
 
     if (
     ((gameMap[2][1] === "X" && gameMap[1][0] === "X") ||
-    (gameMap[1][0] === "X" && gameMap[2][2] === "X")) &&
+    (gameMap[1][0] === "X" && gameMap[2][2] === "X") ||
+    (gameMap[0][1] === "X" && gameMap[2][2] === "X")) &&
     (checkIfCellEmpty(gameMap, 0))) return 0;
 
     if (
     ((gameMap[2][1] === "X" && gameMap[1][2] === "X") ||
-    (gameMap[0][1] === "X" && gameMap[2][0] === "X")) &&
+    (gameMap[0][1] === "X" && gameMap[2][0] === "X") ||
+    (gameMap[2][0] === "X" && gameMap[1][2] === "X")) &&
     (checkIfCellEmpty(gameMap, 2))) return 2;
 
     if (
     ((gameMap[2][1] === "X" && gameMap[0][2] === "X") ||
-    (gameMap[0][1] === "X" && gameMap[1][0] === "X")) &&
+    (gameMap[0][1] === "X" && gameMap[1][0] === "X") ||
+    (gameMap[0][2] === "X" && gameMap[1][0] === "X")) &&
     (checkIfCellEmpty(gameMap, 6))) return 6;
     
     if (
     ((gameMap[0][1] === "X" && gameMap[1][2] === "X") ||
-    (gameMap[0][0] === "X" && gameMap[1][2] === "X")) &&
+    (gameMap[0][0] === "X" && gameMap[1][2] === "X") ||
+    (gameMap[0][0] === "X" && gameMap[2][1] === "X")) &&
     (checkIfCellEmpty(gameMap, 8))) return 8;
 
     do {
