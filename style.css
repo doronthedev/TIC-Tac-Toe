@@ -71,8 +71,8 @@ h1{
     .boxes{
         height: 75px;
         width: 75px;
-        font-size: 4rem;
         font-weight: 500;
+        font-size: 4rem;
     }
     .choiceBtn{
         margin-bottom: 20px;
