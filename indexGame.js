@@ -222,56 +222,60 @@ function doTurn (turn, index, mode) {
 }
 
 function computerRandomTurn (gameMap) {
-    if (
-    (gameMap[0][1] === "X" && gameMap[0][2] === "X" && gameMap[0][0] === 0) ||
-    (gameMap[1][0] === "X" && gameMap[2][0] === "X" && gameMap[0][0] === 0) ||
-    (gameMap[1][1] === "X" && gameMap[2][2] === "X" && gameMap[0][0] === 0)
-    ) return 0;
+    let turns = ["O", "X"];
 
-    if (
-    (gameMap[0][0] === "X" && gameMap[0][2] === "X" && gameMap[0][1] === 0) ||
-    (gameMap[2][1] === "X" && gameMap[1][1] === "X" && gameMap[0][1] === 0)
-    ) return 1;
-
-    if (
-    (gameMap[0][0] === "X" && gameMap[0][1] === "X" && gameMap[0][2] === 0) ||
-    (gameMap[2][2] === "X" && gameMap[1][2] === "X" && gameMap[0][2] === 0) ||
-    (gameMap[2][0] === "X" && gameMap[1][1] === "X" && gameMap[0][2] === 0)
-    ) return 2;
-
-    if (
-    (gameMap[1][1] === "X" && gameMap[1][2] === "X" && gameMap[1][0] === 0) || 
-    (gameMap[0][0] === "X" && gameMap[2][0] === "X" && gameMap[1][0] === 0)
-    ) return 3;
-
-    if (
-    (gameMap[1][0] === "X" && gameMap[1][2] === "X" && gameMap[1][1] === 0) ||
-    (gameMap[0][1] === "X" && gameMap[2][1] === "X" && gameMap[1][1] === 0) ||
-    (gameMap[0][0] === "X" && gameMap[2][2] === "X" && gameMap[1][1] === 0) ||
-    (gameMap[2][0] === "X" && gameMap[0][2] === "X" && gameMap[1][1] === 0)
-    ) return 4;
-
-    if (
-    (gameMap[1][0] === "X" && gameMap[1][1] === "X" && gameMap[1][2] === 0) ||
-    (gameMap[2][2] === "X" && gameMap[1][2] === "X" && gameMap[1][2] === 0) 
-    ) return 5;
-
-    if (
-    (gameMap[2][1] === "X" && gameMap[2][2] === "X" && gameMap[2][0] === 0) || 
-    (gameMap[0][0] === "X" && gameMap[1][0] === "X" && gameMap[2][0] === 0) ||    
-    (gameMap[0][2] === "X" && gameMap[1][1] === "X" && gameMap[2][0] === 0)
-    ) return 6;
-
-    if (
-    (gameMap[2][0] === "X" && gameMap[2][2] === "X" && gameMap[2][1] === 0) ||
-    (gameMap[0][1] === "X" && gameMap[1][1] === "X" && gameMap[2][1] === 0)
-    ) return 7;
-
-    if (
-    (gameMap[2][0] === "X" && gameMap[2][1] === "X" && gameMap[2][2] === 0) ||
-    (gameMap[0][2] === "X" && gameMap[1][2] === "X" && gameMap[2][2] === 0) ||
-    (gameMap[0][0] === "X" && gameMap[1][1] === "X" && gameMap[2][2] === 0) 
-    ) return 8;
+    for (let turn of turns) {
+        if (
+        (gameMap[0][1] === turn && gameMap[0][2] === turn && gameMap[0][0] === 0) ||
+        (gameMap[1][0] === turn && gameMap[2][0] === turn && gameMap[0][0] === 0) ||
+        (gameMap[1][1] === turn && gameMap[2][2] === turn && gameMap[0][0] === 0)
+        ) return 0;
+    
+        if (
+        (gameMap[0][0] === turn && gameMap[0][2] === turn && gameMap[0][1] === 0) ||
+        (gameMap[2][1] === turn && gameMap[1][1] === turn && gameMap[0][1] === 0)
+        ) return 1;
+    
+        if (
+        (gameMap[0][0] === turn && gameMap[0][1] === turn && gameMap[0][2] === 0) ||
+        (gameMap[2][2] === turn && gameMap[1][2] === turn && gameMap[0][2] === 0) ||
+        (gameMap[2][0] === turn && gameMap[1][1] === turn && gameMap[0][2] === 0)
+        ) return 2;
+    
+        if (
+        (gameMap[1][1] === turn && gameMap[1][2] === turn && gameMap[1][0] === 0) || 
+        (gameMap[0][0] === turn && gameMap[2][0] === turn && gameMap[1][0] === 0)
+        ) return 3;
+    
+        if (
+        (gameMap[1][0] === turn && gameMap[1][2] === turn && gameMap[1][1] === 0) ||
+        (gameMap[0][1] === turn && gameMap[2][1] === turn && gameMap[1][1] === 0) ||
+        (gameMap[0][0] === turn && gameMap[2][2] === turn && gameMap[1][1] === 0) ||
+        (gameMap[2][0] === turn && gameMap[0][2] === turn && gameMap[1][1] === 0)
+        ) return 4;
+    
+        if (
+        (gameMap[1][0] === turn && gameMap[1][1] === turn && gameMap[1][2] === 0) ||
+        (gameMap[2][2] === turn && gameMap[1][2] === turn && gameMap[1][2] === 0) 
+        ) return 5;
+    
+        if (
+        (gameMap[2][1] === turn && gameMap[2][2] === turn && gameMap[2][0] === 0) || 
+        (gameMap[0][0] === turn && gameMap[1][0] === turn && gameMap[2][0] === 0) ||    
+        (gameMap[0][2] === turn && gameMap[1][1] === turn && gameMap[2][0] === 0)
+        ) return 6;
+    
+        if (
+        (gameMap[2][0] === turn && gameMap[2][2] === turn && gameMap[2][1] === 0) ||
+        (gameMap[0][1] === turn && gameMap[1][1] === turn && gameMap[2][1] === 0)
+        ) return 7;
+    
+        if (
+        (gameMap[2][0] === turn && gameMap[2][1] === turn && gameMap[2][2] === 0) ||
+        (gameMap[0][2] === turn && gameMap[1][2] === turn && gameMap[2][2] === 0) ||
+        (gameMap[0][0] === turn && gameMap[1][1] === turn && gameMap[2][2] === 0) 
+        ) return 8;
+    }
 
     let randomTurn;
 
