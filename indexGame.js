@@ -258,7 +258,7 @@ function computerRandomTurn (gameMap) {
     
         if (
         (gameMap[1][0] === turn && gameMap[1][1] === turn && gameMap[1][2] === 0) ||
-        (gameMap[2][2] === turn && gameMap[1][2] === turn && gameMap[1][2] === 0) 
+        (gameMap[2][2] === turn && gameMap[0][2] === turn && gameMap[1][2] === 0) 
         ) return 5;
     
         if (
