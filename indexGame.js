@@ -280,7 +280,18 @@ function computerRandomTurn (gameMap) {
         ) return 8;
     }
 
+    if (gameMap[0][0] === "X" || gameMap[0][2] || gameMap[2][0] || gameMap[2][2]) return 4;
+    
     let randomTurn;
+    let edges = [0, 2, 6, 8];
+
+    if (gameMap[1][1] === "X") {
+        do {
+            randomTurn = edges[Math.floor(Math.random() * 4)];
+        } while (!checkIfCellEmpty(gameMap, randomTurn));
+
+        return randomTurn;
+    }
 
     do {
         randomTurn = Math.floor(Math.random() * 9);
