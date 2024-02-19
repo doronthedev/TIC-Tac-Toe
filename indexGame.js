@@ -16,6 +16,7 @@ const gameMap = [
 let userTurn;
 let isPlayH;
 let isPlayC;
+let wait = false;
 
 function resetMap (gameMap) {
     if (gameMap === undefined) return 
@@ -160,7 +161,6 @@ function humanVsHuman () {
 function humanVsComputer () {
 
     let randomTurn;
-    let wait = false;
 
     setup("humanVsComputer");
 
@@ -170,13 +170,13 @@ function humanVsComputer () {
 
     Boxes.forEach((box, indexOfBox) => {
         box.addEventListener("click", () => {
-            if (!isPlayC || wait) return
+            if (!isPlayC) return
+            if (wait) return
             if (!checkIfCellEmpty(gameMap, indexOfBox)) return
 
             doTurn("X", indexOfBox, "humanVsComputer");
 
             if (!isPlayC) return
-
             wait = true;
 
             setTimeout(() => {
@@ -185,13 +185,12 @@ function humanVsComputer () {
 
                 if (!isPlayC) return
 
-                doTurn("O", randomTurn, "humanVsComputer");
                 wait = false;
+                doTurn("O", randomTurn, "humanVsComputer");
             }, 1000);
         });
     });
 }
-
 function setup (mode) {
     resetBoard();
     resetMap(gameMap);
