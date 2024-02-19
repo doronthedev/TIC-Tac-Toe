@@ -279,7 +279,9 @@ function computerRandomTurn (gameMap) {
         ) return 8;
     }
 
-    if ((gameMap[0][0] === "X" || gameMap[0][2] === "X" || gameMap[2][0] === "X" || gameMap[2][2] === "X") &&
+    if (
+    ((gameMap[0][0] === "X" || gameMap[0][2] === "X" || gameMap[2][0] === "X" || gameMap[2][2] === "X") ||    
+    (gameMap[0][1] === "X" || gameMap[1][0] === "X" || gameMap[1][2] === "X" || gameMap[2][1] === "X")) &&
     (checkIfCellEmpty(gameMap, 4))) return 4;
 
     let randomTurn;
