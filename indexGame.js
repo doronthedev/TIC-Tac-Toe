@@ -280,16 +280,29 @@ function computerRandomTurn (gameMap) {
         ) return 8;
     }
 
-    if (gameMap[0][0] === "X" || gameMap[0][2] || gameMap[2][0] || gameMap[2][2]) return 4;
-    
+    if ((gameMap[0][0] === "X" || gameMap[0][2] === "X" || gameMap[2][0] === "X" || gameMap[2][2] === "X") &&
+    (checkIfCellEmpty(gameMap, 4))) return 4;
+
     let randomTurn;
     let edges = [0, 2, 6, 8];
+    let middles = [1, 3, 5, 7];
 
     if (gameMap[1][1] === "X") {
         do {
             randomTurn = edges[Math.floor(Math.random() * 4)];
         } while (!checkIfCellEmpty(gameMap, randomTurn));
 
+        return randomTurn;
+    }
+
+    if (
+    (gameMap[0][0] === "X" && gameMap[2][2] === "X" && gameMap[1][1] === "O") ||
+    (gameMap[0][2] === "X" && gameMap[2][0] === "X" && gameMap[1][1] === "O")
+    ) {
+        do {
+            randomTurn = middles[Math.floor(Math.random() * 4)];
+        } while (!checkIfCellEmpty(gameMap, randomTurn));
+        console.log(randomTurn)
         return randomTurn;
     }
 
