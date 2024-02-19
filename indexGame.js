@@ -160,6 +160,8 @@ function humanVsHuman () {
 function humanVsComputer () {
 
     let randomTurn;
+    let wait = false;
+
     setup("humanVsComputer");
 
     HumanBtn.onClick = function() {
@@ -168,22 +170,23 @@ function humanVsComputer () {
 
     Boxes.forEach((box, indexOfBox) => {
         box.addEventListener("click", () => {
-            if (!isPlayC) return
+            if (!isPlayC || wait) return
             if (!checkIfCellEmpty(gameMap, indexOfBox)) return
 
             doTurn("X", indexOfBox, "humanVsComputer");
 
             if (!isPlayC) return
 
-            isPlayC = false;
+            wait = true;
 
             setTimeout(() => {
 
                 randomTurn = computerRandomTurn(gameMap);
 
-                isPlayC = true;
+                if (!isPlayC) return
 
                 doTurn("O", randomTurn, "humanVsComputer");
+                wait = false;
             }, 1000);
         });
     });
