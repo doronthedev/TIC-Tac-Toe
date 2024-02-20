@@ -1,3 +1,6 @@
+const sound1 = new Audio('img\\sound1.mp3');
+const sound2 = new Audio('img\\sound2.mp3');
+
 const BoxContainer = document.querySelector(".box");  
 const Boxes = document.querySelectorAll(".boxes"); 
 const UserTurnSpan = document.querySelector(".userTurn");
@@ -126,10 +129,16 @@ function checkWinCondition (gameMap) {
     return {isWin: false, whoWon: "nobody"};
 }
 
+function playSound(sound) {
+    sound.play();
+}
+
 function boardWin (userTurn) {
     UserTurnSpanP1.textContent = "";
     UserTurnSpanP2.textContent = "";
     UserTurnSpan.textContent = `${userTurn} ${userTurn != "Tie :(" ? "won :)" : ""}`;
+
+    playSound(sound2);
 }
 
 function changeBoard (userTurn, clickIndex) {
