@@ -48,8 +48,8 @@ h1{
     margin-bottom: 40px;
     padding: 10px;
     font-size: 1.5rem;
+    border-radius: 12px;
     width: 280px;
-    border-radius: 10px;
 
     border: none;
     cursor: pointer;
