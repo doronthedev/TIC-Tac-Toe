@@ -2,6 +2,7 @@ body{
     background: url("https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg");
     text-align: center;
     user-select: none;
+    overflow: hidden;
 }
 
 h1{
